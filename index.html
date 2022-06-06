@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<link rel="shortcut icon" type="image/png" href="https://i.ibb.co/2txDVsF/avafb.jpg">
+<title>FSpeed</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="/socket.io/socket.io.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+        // var socket = io();
+        // var messagesEl;
+        // $(document).ready(function () {
+        //     messagesEl = $('#messages')[0];
+        //     socket.on("messages", (text) => {
+        //         messagesEl.append(text);
+        //     });
+        //     let file_id = /[^\/$]*$/.exec(window.location.href)[0]
+        //     socket.emit("get-file", file_id);
+        // });
+        function checkAndGo() {
+            let input = $('#fshareLink')[0].value;
+            let url = window.location.href + 'file/' + /file\/([\d\w]*)/.exec(input)[1];
+            window.location.replace(url);
+        }
+    </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N4GMTJGJG6"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-N4GMTJGJG6');
+    </script>
+</head>
+<body>
+<div class="modal" tabindex="-1" id="myModal" style="display: block;">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">FShare Pro by DatNguyen</h5>
+
+</div>
+<div class="modal-body">
+<label for="fshareLink" class="form-label">Link file FShare:</label>
+<input type="email" class="form-control" id="fshareLink" placeholder="https://www.fshare.vn/file/RJ5R7GC4BXG7">
+<button type="button" class="btn btn-primary mt-2 float-end" onclick="checkAndGo()">Tải
+xuống</button>
+</div>
+<div class="modal-footer d-block">
+<b>Lưu ý:</b><br>
+- Chỉ tải tệp, không tải thư mục<br>
+- Giới hạn dung lượng file thường là 10GB.<br>
+- Nếu bạn không theo dõi quá trình tải sẽ không thấy download link trả về <br>
+- Bạn cũng có thể tìm file của mình trong thư mục sau: <a href="https://t.ly/fshare.ga" style="width: 100%; text-align: center; display: block;">t.ly/fshare.ga</a>
+<hr><br>
+</div>
+</div>
+</div>
+</body>
+</html>
